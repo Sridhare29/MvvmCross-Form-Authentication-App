@@ -1,0 +1,34 @@
+﻿<views:MvxContentPage  x:TypeArguments="viewModels:DetailsViewModel" xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Authmvvmcross.UI.Pages.ShowView"
+              xmlns:local="clr-namespace:MvvmCross.Core;assembly=MvvmCross"
+              xmlns:views="clr-namespace:MvvmCross.Forms.Views;assembly=MvvmCross.Forms"
+                 xmlns:viewModels="clr-namespace:Authmvvmcross.Core.ViewModels;assembly=Authmvvmcross.Core"
+>
+    <ContentPage.Content>
+        <StackLayout HorizontalOptions="Center" VerticalOptions="Center">
+            <Label Text="Register Details:" TextColor="DarkBlue" FontSize="Title" FontAttributes="Bold"/>
+    
+            <Label Text=" Username" FontSize="Large" />
+            <Label Text="{Binding Username}" FontSize="Large" />
+            <Label Text="Firstname: " FontSize="Large" />
+
+            <Label Text="{Binding Firstname}" FontSize="Large" />
+            <Label Text="Lastname: " FontSize="Large" />
+
+            <Label Text="{Binding Lastname}" FontSize="Large" />
+            <Label Text="Email: " FontSize="Large" />
+
+            <Label Text="{Binding Email}" FontSize="Large" />
+            <Label Text="Password: " FontSize="Large" />
+
+            <Label Text="{Binding Password}" FontSize="Large" />
+            <Label Text="ConfirmPassword: " FontSize="Large" />
+
+            <Label Text="{Binding ConfirmPassword}" FontSize="Large" />
+
+
+        </StackLayout>
+    </ContentPage.Content>
+
+</views:MvxContentPage>

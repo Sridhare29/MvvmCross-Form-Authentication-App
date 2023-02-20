@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<views:MvxContentPage  x:TypeArguments="viewModels:SignupViewModel"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Authmvvmcross.UI.Pages.Register"
+               xmlns:views="clr-namespace:MvvmCross.Forms.Views;assembly=MvvmCross.Forms"
+              xmlns:viewModels="clr-namespace:Authmvvmcross.Core.ViewModels;assembly=Authmvvmcross.Core"
+                        BackgroundImageSource="pexel23.jpg">
+    <ContentPage.Content>
+        <Grid HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" >
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"></RowDefinition>
+                <RowDefinition Height="*"></RowDefinition>
+            </Grid.RowDefinitions>
+            <Frame Grid.Row="1" Margin="10,10,10,10" BorderColor="Transparent" BackgroundColor="WhiteSmoke" Opacity="0.9"  HasShadow="True"  CornerRadius="50" HeightRequest="100">
+                <Grid HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" RowSpacing="20" Padding="20,50,20,0" >
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"></RowDefinition>
+                        <RowDefinition Height="Auto"></RowDefinition>
+                        <RowDefinition Height="Auto"></RowDefinition>
+                        <RowDefinition Height="Auto"></RowDefinition>
+                        <RowDefinition Height="Auto"></RowDefinition>
+                        <RowDefinition Height="Auto"></RowDefinition>
+                        <RowDefinition Height="Auto"></RowDefinition>
+                        <RowDefinition Height="Auto"></RowDefinition>
+                        <RowDefinition Height="Auto"></RowDefinition>
+                    </Grid.RowDefinitions>
+                    <Label Grid.Row="0"  Text="SignUp" FontSize="24" FontAttributes="Bold" TextColor="#1C375C" HorizontalOptions="CenterAndExpand"></Label>
+                    <Label Grid.Row="1"  Margin="0,-15,0,0" Text="Create a new account" TextColor="#1C375C"  HorizontalOptions="CenterAndExpand"></Label>
+                        <Entry Grid.Row="2"  Text="{Binding Username}" Placeholder="Username" Margin="0,5,0,0" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"></Entry>
+                    <Entry Grid.Row="3"  Text="{Binding Firstname}" Placeholder="Firstname" Margin="0,5,0,0" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"></Entry>
+                    <Entry Grid.Row="4"  Text="{Binding Lastname}" Placeholder="Lastname" Margin="0,5,0,0" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"></Entry>
+                    <Entry Grid.Row="5"  Text="{Binding Email}" Placeholder="Email" Margin="0,5,0,0" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"></Entry>
+                    
+                    <Entry Grid.Row="6"  Text="{Binding Password}" Placeholder="Password" Margin="0,5,0,0" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"></Entry>
+                    <Entry Grid.Row="7" Text="{Binding ConfirmPassword}"  Placeholder="ConfirmPassword" IsPassword="True" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"></Entry>
+                    <Label Grid.Row="8" x:Name="ErrorMessageLabel"  Text="{Binding ErrorMessage}"   TextColor="Red"  IsVisible="{Binding ErrorMessageVisible}" />
+
+                    <Button Grid.Row="9" Text="SignUp" Command="{Binding SignUpCommand}"  BackgroundColor="#0277C8"    CornerRadius="20"></Button>
+                    <Label Grid.Row="10" Text="Teams and Policy*"/>
+
+
+                </Grid>
+            </Frame>
+        </Grid>
+    </ContentPage.Content>
+</views:MvxContentPage>

@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<views:MvxContentPage x:TypeArguments="viewModels:ProfileList" xmlns:viewModels="clr-namespace:Authmvvmcross.Core.ViewModels;assembly=Authmvvmcross.Core" xmlns:views="clr-namespace:MvvmCross.Forms.Views;assembly=MvvmCross.Forms"   xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:controls="clr-namespace:ImageCircle.Forms.Plugin.Abstractions;assembly=ImageCircle.Forms.Plugin"
+                      x:Class="Authmvvmcross.UI.Pages.ProfileViewLists" BackgroundColor="LightSkyBlue">
+    <ContentPage.Content>
+        <StackLayout>
+            <Frame Margin="5,5,5,5" CornerRadius="5" BackgroundColor="WhiteSmoke">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto" />
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="*" />
+
+                    </Grid.ColumnDefinitions>
+                    <controls:CircleImage Grid.RowSpan="2" Margin="5,10,5,10" VerticalOptions="Center" HeightRequest="90" WidthRequest="100" 
+          Source="{Binding ImageSourcess}" ></controls:CircleImage>
+                    <StackLayout Grid.Column="1" Orientation="Vertical">
+                        <Label Text="{Binding Username}" Margin="5,10,5,10" Grid.Column="1" FontSize="Title" FontAttributes="Bold"   VerticalOptions="Center" />
+                        <Label Text="{Binding Email}" Margin="2,-12,2,2" Grid.Row="1" Grid.Column="1" FontSize="12"  VerticalOptions="Start" FontAttributes="Italic"/>
+
+                    </StackLayout>
+                    <ImageButton Grid.Column="2" HorizontalOptions="End" Margin="5,10,5,10" Command="{Binding NavigateCommands}" BackgroundColor="WhiteSmoke" VerticalOptions="Center" HeightRequest="50" WidthRequest="50" 
+       Source="icon8.png" ></ImageButton>
+                </Grid>
+            </Frame>
+
+            <Button Text="LogOut" Grid.Column="5" Command="{Binding LogoutCommand} " CornerRadius="10" BackgroundColor="WhiteSmoke" TextColor="Red"  Margin="8,480,8,0"></Button>
+        </StackLayout>
+    </ContentPage.Content>
+</views:MvxContentPage>

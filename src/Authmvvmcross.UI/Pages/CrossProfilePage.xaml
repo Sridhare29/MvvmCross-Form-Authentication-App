@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<views:MvxContentPage   x:TypeArguments="viewModels:ProfileEditViewModel" 
+xmlns:viewModels="clr-namespace:Authmvvmcross.Core.ViewModels;assembly=Authmvvmcross.Core"    xmlns:views="clr-namespace:MvvmCross.Forms.Views;assembly=MvvmCross.Forms" xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:controls="clr-namespace:ImageCircle.Forms.Plugin.Abstractions;assembly=ImageCircle.Forms.Plugin"
+                        x:Class="Authmvvmcross.UI.Pages.CrossProfilePage"
+                        BackgroundColor="LightSkyBlue">
+    <ContentPage.Content>
+        <Grid HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" >
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"></RowDefinition>
+                <RowDefinition Height="*"></RowDefinition>
+            </Grid.RowDefinitions>
+            <Frame Grid.Row="1" Margin="20,20,20,20" BorderColor="Transparent" HasShadow="True"  CornerRadius="50" HeightRequest="100">
+                <Grid HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" RowSpacing="30" Padding="15,10,15,100">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"></RowDefinition>
+                        <RowDefinition Height="Auto"></RowDefinition>
+                        <RowDefinition Height="Auto"></RowDefinition>
+                        <RowDefinition Height="Auto"></RowDefinition>
+                        <RowDefinition Height="Auto"></RowDefinition>
+                        <RowDefinition Height="Auto"></RowDefinition>
+                        <RowDefinition Height="Auto"></RowDefinition>
+                        <RowDefinition Height="Auto"></RowDefinition>
+                        <RowDefinition Height="Auto"></RowDefinition>
+                    </Grid.RowDefinitions>
+                    <Label Grid.Row="0"  Text="Edit Profile" FontSize="24" FontAttributes="Bold" TextColor="#1C375C" HorizontalOptions="CenterAndExpand"></Label>
+                    <controls:CircleImage  Grid.Row="2" HeightRequest="120" BorderColor="Black"  BorderThickness="2" WidthRequest="120"  FlyoutItem.IsVisible="True" x:Name="selectedImage" Source="{Binding ImageSources}" >
+                    </controls:CircleImage>
+                    <Button Grid.Row="2" Text="Add Photo "  CornerRadius="14" Command="{Binding ChooseImageCommand}" Margin="0,0,0,-10" Font="12" HeightRequest="35" BackgroundColor="WhiteSmoke" TextColor="Red" HorizontalOptions="Center" VerticalOptions="End"></Button>
+
+                    <Label Grid.Row="3"   Text="Email *" Margin="0,-20,0,0" TextColor="#1C375C"  HorizontalOptions="StartAndExpand"></Label>
+                    <Entry Grid.Row="4"    Text="{Binding Email}" Placeholder="Enter Email Address" Margin="-2,-40,0,0" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"></Entry>
+
+                    <Label Grid.Row="5"   Text="Username *" Margin="0,-20,0,0" TextColor="#1C375C"  HorizontalOptions="StartAndExpand"></Label>
+                    <Entry Grid.Row="6"  Text="{Binding Username}"  Placeholder="Enter The Username" Margin="-2,-40,0,0" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"></Entry>
+
+                    <Label Grid.Row="7"   Text="Password *" Margin="0,-20,0,0" TextColor="#1C375C"  HorizontalOptions="StartAndExpand"></Label>
+                    <Entry Grid.Row="8"   Text="{Binding Password}" Placeholder="Enter The Password" IsPassword="True" Margin="-2,-40,0,0" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"></Entry>
+
+                    <Button Grid.Row="10" Text="Save" Command="{Binding SaveDetail}"    BackgroundColor="LightSkyBlue" CornerRadius="20"></Button>
+
+
+                </Grid>
+            </Frame>
+        </Grid>
+    </ContentPage.Content>
+</views:MvxContentPage>

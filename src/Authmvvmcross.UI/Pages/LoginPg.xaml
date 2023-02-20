@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<views:MvxContentPage x:TypeArguments="viewModels:LoginViewModels"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Authmvvmcross.UI.Pages.LoginPg"
+                 xmlns:views="clr-namespace:MvvmCross.Forms.Views;assembly=MvvmCross.Forms"
+                 xmlns:viewModels="clr-namespace:Authmvvmcross.Core.ViewModels;assembly=Authmvvmcross.Core"
+                      BackgroundImageSource="fash1.jpg">
+    
+    <ContentPage.Content>
+        <Grid  BackgroundColor="Transparent" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" >
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"></RowDefinition>
+                <RowDefinition Height="*"></RowDefinition>
+            </Grid.RowDefinitions>
+            <Image Grid.Row="0" Margin="0,30" Source="Levislogo.png" Aspect="AspectFit" HeightRequest="160" WidthRequest="60"></Image>
+            <Frame Grid.Row="1" Margin="0,0,0,-40" BorderColor="Transparent" BackgroundColor="WhiteSmoke" Opacity="0.9"    HasShadow="True"  CornerRadius="50" HeightRequest="700">
+                <Grid BackgroundColor="Transparent" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" RowSpacing="20" Padding="20,50,20,0">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"></RowDefinition>
+                        <RowDefinition Height="Auto"></RowDefinition>
+                        <RowDefinition Height="Auto"></RowDefinition>
+                        <RowDefinition Height="Auto"></RowDefinition>
+                        <RowDefinition Height="Auto"></RowDefinition>
+                        <RowDefinition Height="Auto"></RowDefinition>
+                        <RowDefinition Height="Auto"></RowDefinition>
+                        <RowDefinition Height="Auto"></RowDefinition>
+                        <RowDefinition Height="Auto"></RowDefinition>
+                    </Grid.RowDefinitions>
+                    <Label Grid.Row="0"  Text="Welcome Back!" FontSize="24" FontAttributes="Bold" TextColor="#1C375C" HorizontalOptions="CenterAndExpand"></Label>
+                    <Label Grid.Row="1" Margin="0,-15,0,0" Text="Login in to account" TextColor="#1C375C"  HorizontalOptions="CenterAndExpand"></Label>
+                    <Entry Grid.Row="2"  Text="{Binding Username}"  Placeholder="Username" Margin="0,20,0,0" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"></Entry>
+                    <Entry Grid.Row="3" Text="{Binding Password}"  Placeholder="Password" IsPassword="True" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"></Entry>
+                    <Label Grid.Row="4" x:Name="ErrorMessageLabel"  Text="{Binding ErrorMessage}"   TextColor="Red"  IsVisible="{Binding ErrorMessageVisible}" />
+
+                    <Button Grid.Row="5" Text="Login"  Command="{Binding LoginCommand}" BackgroundColor="#0277C8"    CornerRadius="20"></Button>
+                    <Button Grid.Row="6" Text="Sign up" Command="{Binding SignupagainCommand}" BackgroundColor="#0277C8"    CornerRadius="20"></Button>
+                    
+                </Grid>
+            </Frame>
+        </Grid>
+    </ContentPage.Content>
+</views:MvxContentPage>
